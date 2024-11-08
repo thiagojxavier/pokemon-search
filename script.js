@@ -1,3 +1,4 @@
+const formSearch = document.getElementById('search');
 const searchInput = document.getElementById('search-input');
 const searchButton = document.getElementById('search-button');
 const pokemonName = document.getElementById('pokemon-name');
@@ -13,7 +14,8 @@ const pokemonSpecialAttack = document.getElementById('special-attack');
 const pokemonSpecialDefense = document.getElementById('special-defense');
 const pokemonSpeed = document.getElementById('speed');
 
-const searchPokemon = async () => {
+const searchPokemon = async (e) => {
+    e.preventDefault();
     pokemonTypes.innerHTML = ""
     const valueInput = searchInput.value.toLowerCase();
 
@@ -49,10 +51,16 @@ const searchPokemon = async () => {
 
     } catch {
         alert("Pokémon not found");
+    } finally {
+        searchInput.value = "";
     }
 }
 
 const accessDataProperty = (data, prop) => {
+    if(prop === "back_default" && !data["back_default"]) {
+        return data['front_shiny'];
+    }
+
     return `${data[prop]}`
 }
 
@@ -66,6 +74,5 @@ const getNestedProperty = (data, propertyRequired1, propertyRequired2) => {
     return properties
 }
 
-searchButton.addEventListener('click', searchPokemon);
+formSearch.addEventListener('submit', searchPokemon);
 searchInput.focus();
-// trocar botão para submit, e corrigir erro de undefined quando pesquisado pokémon 999
