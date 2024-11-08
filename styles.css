@@ -128,6 +128,7 @@ main {
   text-transform: uppercase;
   font-size: 0.8em;
   display: flex;
+  justify-content: center;
   gap: 10px;
   align-items: center;
   color: var(--color-4);
@@ -156,7 +157,6 @@ main {
 #types > span {
   padding: 7px;
   border-radius: 6px;
-  min-width: 65px;
   text-align: center;
   font-weight: bold;
   font-size: 0.9em;
@@ -280,4 +280,70 @@ tbody td {
 td {
   background-color: var(--color-2);
   color: var(--color-4);
+}
+
+@media (max-width: 650px) {
+  main {
+    max-width: 300px;
+  }
+
+  #search > label {
+    font-size: .7em;
+  }
+  
+  #search > div {
+    gap: 2px;
+  }
+  
+  #search-input {
+    padding: 2px;
+    width: 50%;
+    font-size: .8em;
+  }
+  
+  #search-button {
+    width: 70px;
+    cursor: pointer;
+  }
+  
+  #pokemon-area {
+    width: 90%;
+    height: 250px;
+    padding: 5px;
+  }
+
+  #pokemon-name {
+    font-size: 1.2em;
+  }
+  
+  #pokemon-id {
+    font-size: 0.7em;
+  }
+
+  #pokemon-area div:nth-of-type(2) {
+    font-size: 0.7em;
+    gap: 10px;
+    padding: 2px;
+  }
+  
+  #sprite {
+    width: 50%; 
+  }
+  
+  .img-secundary {
+    width: 50%; 
+  }
+  
+  table {
+    padding: 5px;
+    width: 100%;
+  }
+  
+  thead td {
+    padding: 5px;
+  }
+  
+  tbody td {
+    padding: 5px;
+  } 
 }

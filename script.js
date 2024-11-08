@@ -67,3 +67,5 @@ const getNestedProperty = (data, propertyRequired1, propertyRequired2) => {
 }
 
 searchButton.addEventListener('click', searchPokemon);
+searchInput.focus();
+// trocar botão para submit, e corrigir erro de undefined quando pesquisado pokémon 999
